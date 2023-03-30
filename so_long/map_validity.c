@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:48:28 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/03/22 18:49:55 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/03/23 17:04:11 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,6 @@ int count_lines(int fd)
    return (num_lines);
 }
 
-// int count_line_length(int fd)
-// {
-//     int line_length = 0;
-//     char c;
-    
-//     while(read(fd, &c, 1) == 1) 
-//     {
-//         line_length++;
-//         if(c == '\n')
-//             break;
-//     }
-//     return line_length;
-// }
-
-//checking if the map is valid
 int no_repetition(char *line, char c)
 {
     int i;
@@ -131,7 +116,7 @@ int check_map(int fd)
             while (line[i] == 1 || line[i] == 0 || line[i] == 'P' 
             || line[i] == 'C' || line[i] == 'E')
             {
-                if !(no_repetition(line, 'P') && (no_repetition(line, 'E')))
+                if (!(no_repetition(line, 'P') && (no_repetition(line, 'E'))))
                     return(0);
             }        
         }
