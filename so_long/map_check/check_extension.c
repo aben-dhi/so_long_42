@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   check_extension.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 17:28:52 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/03/31 23:59:21 by aben-dhi         ###   ########.fr       */
+/*   Created: 2023/04/01 17:59:57 by aben-dhi          #+#    #+#             */
+/*   Updated: 2023/04/08 00:19:44 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int has_extension(char *filename,  char *extension)
 {
@@ -21,31 +21,4 @@ int has_extension(char *filename,  char *extension)
         return 1;
     else
         return 0;
-}
-
-// char *map_to_string(int fd)
-// {
-//     char    *line;
-//     char    *res;
-//     int     i;
-
-//     line = get_next_line(fd);
-//     res = 0;
-//     if (!line)
-//         return (NULL);
-//     while (1)
-//     {
-//         res = ft_strjoin(line, get_next_line(fd));
-//         free (line);
-//         line = get_next_line(fd);
-//     }
-// }
-
-
-int main()
-{
-    int i;
-    i = has_extension("map.berr", ".ber");
-    printf("%d\n", i);
-    return (0);
 }

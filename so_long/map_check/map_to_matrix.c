@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_to_matrix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 16:25:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/04/09 00:56:09 by aben-dhi         ###   ########.fr       */
+/*   Created: 2023/04/09 00:58:09 by aben-dhi          #+#    #+#             */
+/*   Updated: 2023/04/09 00:58:51 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int main()
+int count_lines(int fd)
 {
-    
+   int num_lines = 0;
+   char c;
+   
+   while(read(fd, &c, 1) == 1) 
+   {
+       if(c == '\n') 
+       {
+           num_lines++;
+       }
+   }
+   return (num_lines);
 }
