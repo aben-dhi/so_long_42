@@ -6,11 +6,17 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 18:00:49 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/04/09 03:47:55 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:56:18 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+// #include "../get_next_line/get_next_line.c"
+// #include "../get_next_line/get_next_line_utils.c"
+// #include "check_repetition.c"
+// #include "line_check.c"
+
+// #include "map_to_matrix.c"
 
 char *map_to_string(int fd)
 {
@@ -71,17 +77,21 @@ int check_line(char *str)
 // }
 
 
-int main ()
-{
-    int fd;
-    char *str; 
+// int main ()
+// {
+    // int fd;
+    // char *str; 
     
-    fd = open("map.ber", O_RDONLY);
-    str = map_to_string(fd);
-    printf("%s\n", str);
+    // fd = open("../map.ber", O_RDONLY);
     // str = map_to_string(fd);
-    printf("%d\n", check_line(str));
-    close(fd);
-    printf("%zu\n", ft_strlen(str));
-    return 0;
-}
+    // printf("%s\n", str);
+    // // str = map_to_string(fd);
+    // printf("%d\n", check_line(str));
+    // close(fd);
+    // printf("%zu\n", ft_strlen(str));
+    // printf("%d\n", check_repetitions(str));
+    // printf("%d\n", count_lines(str));
+    // free(str);
+
+//     return 0;
+// }
