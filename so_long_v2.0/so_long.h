@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:42:39 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/05 21:49:47 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:08:58 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,26 @@
 # define KEY_D				2
 # define KEY_ESC  			53
 
-# define WALL_XPM			"textures/sprites/wall.xpm"
-# define FLOOR_XPM			"textures/sprites/floor.xpm"
-# define COINS_XPM			"textures/sprites/coin-bag.xpm"
-# define PLAYER_FRONT_XPM		"textures/player/front.xpm"
-# define EXIT_XPM		"textures/sprites/exit.xpm"
+# define WALL			"textures/sprites/wall.xpm"
+# define FLOOR			"textures/sprites/floor.xpm"
+# define COINS			"textures/sprites/coin-bag.xpm"
+# define PLAYER		"textures/player/front.xpm"
+# define EXIT		"textures/sprites/exit.xpm"
+
+typedef struct s_image
+{
+	void	*mlx;
+	void	*mlx_win;
+	void	*mlx_img;
+	int		len;
+	int		wid;
+}		t_image;
 
 typedef struct s_game
 {
 	bool	map_alloc;
 	char	**map;
+	char	**tmp;
 	int		rows;
 	int		columns;
 	int		p_x;
@@ -50,6 +60,9 @@ typedef struct s_game
 	bool	exit_f;
 	bool	player_f;
 	int		moves;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	t_image	image;
 }		t_game;
 
 char	*get_next_line(int fd);
@@ -62,7 +75,19 @@ char	**ft_split(char *s, char c);
 int		comp_check(t_game *game);
 int		p_check(t_game *game);
 int		e_check(t_game *game);
-int		c_check(t_game *game);
+int		c_check1(t_game *game);
+void	c_check2(t_game *game, int c);
 int		valid_frame(t_game *game);
+int		check_extension(char *filename);
+void	find_path(t_game *game, int i, int j);
+int		path_check(t_game *game);
+void	free_tmp(char **str);
+void	init_game(t_game *game);
+void	put_img(t_game *game);
+void	floor_img(t_game *game, int i, int j);
+void	wall_img(t_game *game, int i, int j);
+void	collectible_img(t_game *game, int i, int j);
+void	player_img(t_game *game, int i, int j);
+void	exit_img(t_game *game, int i, int j);
 
 #endif

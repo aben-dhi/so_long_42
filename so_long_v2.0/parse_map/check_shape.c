@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 21:07:26 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/05 21:52:08 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:13:08 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	check_frame(t_game *game)
 	int	len;
 
 	i = 0;
-	game->columns = ft_strlen(game->map[i]);
 	while (game->map[++i])
 	{
 		if (ft_strlen(game->map[i]) != game->columns)
@@ -51,5 +50,6 @@ int	valid_frame(t_game *game)
 {
 	if (check_walls(game) == 0 && check_frame(game) == 0)
 		return (0);
-	return (1);
+	else
+		return (1);
 }

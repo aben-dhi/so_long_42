@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:17:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/05 21:42:25 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:08:29 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,12 @@ int	p_check(t_game *game)
 		i++;
 	}
 	if (c != 1)
-		return (1);
+	{
+		write (2, "error\n", 6);
+		free_tmp(game->map);
+		free_tmp(game->tmp);
+		exit (1);
+	}
 	return (0);
 }
 
@@ -78,11 +83,27 @@ int	e_check(t_game *game)
 		i++;
 	}
 	if (c != 1)
-		return (1);
+	{
+		write (2, "error\n", 6);
+		free_tmp(game->map);
+		free_tmp(game->tmp);
+		exit (1);
+	}
 	return (0);
 }
 
-int	c_check(t_game *game)
+void	c_check2(t_game *game, int c)
+{
+	if (c < 1)
+	{
+		write (2, "error\n", 6);
+		free_tmp(game->map);
+		free_tmp(game->tmp);
+		exit (1);
+	}
+}
+
+int	c_check1(t_game *game)
 {
 	int	i;
 	int	j;
@@ -90,6 +111,7 @@ int	c_check(t_game *game)
 
 	i = 0;
 	c = 0;
+	game->rows = 0;
 	while (game->map[i])
 	{
 		game->rows++;
@@ -102,7 +124,7 @@ int	c_check(t_game *game)
 		}
 		i++;
 	}
-	if (c < 1)
-		return (1);
+	game->collectibles = c;
+	c_check2(game, c);
 	return (0);
 }
