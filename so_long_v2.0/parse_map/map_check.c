@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:17:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/06 20:08:29 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 16:53:22 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ int	p_check(t_game *game)
 	int	j;
 	int	c;
 
-	i = 0;
+	i = -1;
 	c = 0;
-	while (game->map[i])
+	while (game->map[++i])
 	{
-		j = 0;
-		while (game->map[i][j])
+		j = -1;
+		while (game->map[i][++j])
 		{
 			if (game->map[i][j] == 'P')
 				c++;
-			j++;
 		}
-		i++;
 	}
+	game->p_x = i - 1;
+	game->p_y = j - 1;
 	if (c != 1)
 	{
 		write (2, "error\n", 6);
@@ -69,18 +69,16 @@ int	e_check(t_game *game)
 	int	j;
 	int	c;
 
-	i = 0;
+	i = -1;
 	c = 0;
-	while (game->map[i])
+	while (game->map[++i])
 	{
-		j = 0;
-		while (game->map[i][j])
+		j = -1;
+		while (game->map[i][++j])
 		{
 			if (game->map[i][j] == 'E')
 				c++;
-			j++;
 		}
-		i++;
 	}
 	if (c != 1)
 	{

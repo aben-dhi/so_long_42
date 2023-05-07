@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 21:07:26 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/06 17:13:08 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 15:13:10 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	check_frame(t_game *game)
 {
 	int	i;
-	int	j;
-	int	len;
 
 	i = 0;
 	while (game->map[++i])

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ext.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 14:57:45 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 14:00:24 by aben-dhi         ###   ########.fr       */
+/*   Created: 2023/05/07 13:30:09 by aben-dhi          #+#    #+#             */
+/*   Updated: 2023/05/07 13:47:35 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	has_extension(char *filename, char *extension)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*dot ;
+	int	i;
 
-	dot = ft_strchr(filename, '.');
-	if (dot && ft_strcmp(dot, extension) == 0)
-		return (0);
-	else
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		write(2, "error extension\n", 16);
-		return (1);
+		i++;
 	}
+	return (s1[i] - s2[i]);
 }

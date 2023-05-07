@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:17:31 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/06 19:42:48 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 14:01:38 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	floor_img(t_game *game, int i, int j)
 	int		x;
 	int		y;
 
-	x = 60;
-	y = 60;
+	x = 32;
+	y = 32;
 	game->image.mlx_img = mlx_xpm_file_to_image(game->image.mlx, FLOOR, &x, &y);
 	if (!game->image.mlx_img)
 	{
@@ -35,8 +35,8 @@ void	wall_img(t_game *game, int i, int j)
 	int		x;
 	int		y;
 
-	x = 60;
-	y = 60;
+	x = 32;
+	y = 32;
 	game->image.mlx_img = mlx_xpm_file_to_image(game->image.mlx, WALL, &x, &y);
 	if (!game->image.mlx_img)
 	{
@@ -53,8 +53,8 @@ void	collectible_img(t_game *game, int i, int j)
 	int		x;
 	int		y;
 
-	x = 60;
-	y = 60;
+	x = 32;
+	y = 32;
 	game->image.mlx_img = mlx_xpm_file_to_image(game->image.mlx, COINS, &x, &y);
 	if (!game->image.mlx_img)
 	{
@@ -71,8 +71,8 @@ void	player_img(t_game *game, int i, int j)
 	int		x;
 	int		y;
 
-	x = 60;
-	y = 60;
+	x = 32;
+	y = 32;
 	game->image.mlx_img = mlx_xpm_file_to_image(game->image.mlx, PLAYER,
 			&x, &y);
 	if (!game->image.mlx_img)
@@ -90,8 +90,8 @@ void	exit_img(t_game *game, int i, int j)
 	int		x;
 	int		y;
 
-	x = 60;
-	y = 60;
+	x = 32;
+	y = 32;
 	game->image.mlx_img = mlx_xpm_file_to_image(game->image.mlx, EXIT, &x, &y);
 	if (!game->image.mlx_img)
 	{

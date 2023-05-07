@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:42:39 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/06 20:08:58 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 16:31:52 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_game
 	int		e_x;
 	int		e_y;
 	int		collectibles;
+	int		collected;
 	bool	exit_f;
 	bool	player_f;
 	int		moves;
@@ -78,7 +79,8 @@ int		e_check(t_game *game);
 int		c_check1(t_game *game);
 void	c_check2(t_game *game, int c);
 int		valid_frame(t_game *game);
-int		check_extension(char *filename);
+int		ft_strcmp(char *s1, char *s2);
+int		has_extension(char *filename, char *extension);
 void	find_path(t_game *game, int i, int j);
 int		path_check(t_game *game);
 void	free_tmp(char **str);
@@ -89,5 +91,10 @@ void	wall_img(t_game *game, int i, int j);
 void	collectible_img(t_game *game, int i, int j);
 void	player_img(t_game *game, int i, int j);
 void	exit_img(t_game *game, int i, int j);
+void	mv_count(t_game *game);
+int		handle_key_press(int keycode, t_game *game);
+char	*ft_itoa(int n);
+int		exit_game(t_game *game);
+void	move_up(t_game *game);
 
 #endif
