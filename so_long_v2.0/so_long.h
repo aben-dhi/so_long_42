@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:42:39 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 16:31:52 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 18:23:48 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	find_path(t_game *game, int i, int j);
 int		path_check(t_game *game);
 void	free_tmp(char **str);
 void	init_game(t_game *game);
-void	put_img(t_game *game);
+int		put_img(t_game *game);
 void	floor_img(t_game *game, int i, int j);
 void	wall_img(t_game *game, int i, int j);
 void	collectible_img(t_game *game, int i, int j);
@@ -96,5 +96,9 @@ int		handle_key_press(int keycode, t_game *game);
 char	*ft_itoa(int n);
 int		exit_game(t_game *game);
 void	move_up(t_game *game);
+int		loop_hook(t_game *game);
+void	full_check(t_game *game, char *filename, int fd);
+void	ft_bzero(void *s, size_t n);
+void	get_matrix(int fd, t_game *game);
 
 #endif

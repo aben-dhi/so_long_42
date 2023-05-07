@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:16:43 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 15:05:49 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 18:25:05 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 	int		fd;
-	// int	i;
+	int	i;
 
 	if (ac != 2)
 		return (1);
@@ -51,24 +51,18 @@ int	main(int ac, char **av)
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	if (has_extension(av[1], ".ber") == 1)
-		exit (1);
-	get_matrix(fd, &game);
-	comp_check(&game);
-	p_check(&game);
-	e_check(&game);
-	c_check1(&game);
-	valid_frame(&game);
-	find_path(&game, 1, 1);
-	path_check(&game);
-	// i = 0;
-	// while (i < game.rows)
-	// {
-	// 	printf("%s\n", game.map[i]);
-	// 	i++;
-	// }
+	ft_bzero(&game, sizeof(t_game));
+	full_check(&game, av[1], fd);
+	i = 0;
+	while (i < game.rows)
+	{
+		printf("%s\n", game.tmp[i]);
+		i++;
+	}
 	init_game(&game);
 	put_img(&game);
+	// handle_key_press(&game);
+	// mlx_key_hook(game.win_ptr, handle_key_press, &game);
 	close (fd);
 	return (0);
 }

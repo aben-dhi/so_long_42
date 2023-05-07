@@ -6,13 +6,13 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:47:00 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 15:47:26 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:50:23 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	put_img(t_game *game)
+int	put_img(t_game *game)
 {
 	int	i;
 	int	j;
@@ -20,6 +20,7 @@ void	put_img(t_game *game)
 	j = 0;
 	while (j < game->rows)
 	{
+		i = 0;
 		while (i < (game->columns - 1))
 		{
 			floor_img(game, i, j);
@@ -33,9 +34,9 @@ void	put_img(t_game *game)
 				exit_img(game, i, j);
 			i++;
 		}
-		i = 0;
 		j++;
 	}
+	return (0);
 }
 
 void	init_game(t_game *game)
@@ -49,5 +50,6 @@ void	init_game(t_game *game)
 	put_img(game);
 	mlx_hook(game->image.mlx_win, 2, 0, handle_key_press, game);
 	mlx_hook(game->image.mlx_win, 17, 0, exit_game, game);
+	mlx_loop_hook(game->image.mlx, (int (*)(void *)) &put_img, game);
 	mlx_loop(game->image.mlx);
 }

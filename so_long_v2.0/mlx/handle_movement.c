@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:51:08 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 16:53:42 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:53:57 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	move_up(t_game *game)
 	game->p_x = next_x;
 	game->p_y = next_y;
 	game->map[game->p_x][game->p_y] = 'P';
+	mlx_clear_window(game->mlx_ptr, game->win_ptr);
 	put_img(game);
 }
 

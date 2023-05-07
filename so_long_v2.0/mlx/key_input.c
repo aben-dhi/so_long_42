@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:47:35 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 15:58:12 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:51:30 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	handle_key_press(int keycode, t_game *game)
 	// 	move_right(game);
 	else if (keycode == KEY_ESC)
 		exit_game(game);
-	put_img(game);
 	return (0);
 }
 
