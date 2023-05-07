@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:42:39 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 18:23:48 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:53:02 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,10 @@ int		loop_hook(t_game *game);
 void	full_check(t_game *game, char *filename, int fd);
 void	ft_bzero(void *s, size_t n);
 void	get_matrix(int fd, t_game *game);
+void	player_pos(t_game *game);
+void	move_down(t_game *game);
+void	move_left(t_game *game);
+void	move_right(t_game *game);
+void	exit_pos(t_game *game);
 
 #endif

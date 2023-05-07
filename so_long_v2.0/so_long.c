@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:16:43 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 18:25:05 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 22:14:05 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 	int		fd;
-	int	i;
+
 
 	if (ac != 2)
 		return (1);
@@ -53,12 +53,13 @@ int	main(int ac, char **av)
 	}
 	ft_bzero(&game, sizeof(t_game));
 	full_check(&game, av[1], fd);
-	i = 0;
-	while (i < game.rows)
-	{
-		printf("%s\n", game.tmp[i]);
-		i++;
-	}
+	// i = 0;
+	// while (i < game.rows)
+	// {
+	// 	printf("%s\n", game.tmp[i]);
+	// 	i++;
+	// }
+	player_pos(&game);
 	init_game(&game);
 	put_img(&game);
 	// handle_key_press(&game);

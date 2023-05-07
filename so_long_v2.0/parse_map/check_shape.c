@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 21:07:26 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 15:13:10 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:03:59 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,48 @@ int	valid_frame(t_game *game)
 		return (0);
 	else
 		return (1);
+}
+
+void	player_pos(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < game->rows)
+	{
+		j = 0;
+		while (j < game->columns)
+		{
+			if (game->map[i][j] == 'P')
+			{
+				game->p_x = i;
+				game->p_y = j;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	exit_pos(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < game->rows)
+	{
+		j = 0;
+		while (j < game->columns)
+		{
+			if (game->map[i][j] == 'E')
+			{
+				game->e_x = i;
+				game->e_y = j;
+			}
+			j++;
+		}
+		i++;
+	}
 }

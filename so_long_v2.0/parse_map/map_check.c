@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:17:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 16:53:22 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/07 22:12:31 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int	p_check(t_game *game)
 				c++;
 		}
 	}
-	game->p_x = i - 1;
-	game->p_y = j - 1;
 	if (c != 1)
 	{
 		write (2, "error\n", 6);
@@ -123,6 +121,7 @@ int	c_check1(t_game *game)
 		i++;
 	}
 	game->collectibles = c;
+	game->collected = 0;
 	c_check2(game, c);
 	return (0);
 }
