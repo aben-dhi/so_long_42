@@ -53,6 +53,7 @@ int	main(int ac, char **av)
 	}
 	ft_bzero(&game, sizeof(t_game));
 	full_check(&game, av[1], fd);
+	close (fd);
 	// i = 0;
 	// while (i < game.rows)
 	// {
@@ -64,6 +65,5 @@ int	main(int ac, char **av)
 	put_img(&game);
 	// handle_key_press(&game);
 	// mlx_key_hook(game.win_ptr, handle_key_press, &game);
-	close (fd);
 	return (0);
 }
