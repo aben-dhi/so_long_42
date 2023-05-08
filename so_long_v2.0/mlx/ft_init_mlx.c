@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:47:00 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:00 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:19:01 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ void	init_game(t_game *game)
 	put_img(game);
 	mlx_hook(game->image.mlx_win, 2, 0, handle_key_press, game);
 	mlx_hook(game->image.mlx_win, 17, 0, exit_game, game);
-	// mlx_loop_hook(game->image.mlx, (int (*)(void * )) &put_img, game);
 	mlx_loop(game->image.mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:47:35 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 22:04:22 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:19:32 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ int	handle_key_press(int keycode, t_game *game)
 		move_right(game);
 	else if (keycode == KEY_ESC)
 		exit_game(game);
-	// if (game->collected == game->collectibles && 
-	// 		game->map[game->p_x - 1][game->p_y] == 'E')
-	// 	exit_game(game);
 	return (0);
 }
 
@@ -43,15 +40,3 @@ int	exit_game(t_game *game)
 	exit(0);
 	return (0);
 }
-
-// void exit_game(t_game *game)
-// {
-// 	t_image	*img;
-
-// 	img = &game->image;
-// 	mlx_destroy_image(img->mlx, img->mlx_img);
-// 	mlx_destroy_window(img->mlx, img->mlx_win);
-// 	// free(game->map);
-// 	// free(game->tmp);
-// 	exit(0);
-// }

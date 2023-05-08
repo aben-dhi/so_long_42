@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:41:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/07 14:42:58 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:04:46 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	mv_count(t_game *game)
 	int		i;
 	char	*mv;
 
-	game->moves++;
 	mv = ft_itoa(game->moves);
 	i = 0;
 	write (1, "move count: ", 12);
