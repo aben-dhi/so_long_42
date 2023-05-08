@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:17:27 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/08 13:23:18 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:09:49 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	comp_check(t_game *game)
 		j = 0;
 		while (game->map[i][j])
 		{
-			if (game->map[i][j] != '0' && game->map[i][j] != '1'
-			&& game->map[i][j] != 'P' && game->map[i][j] != 'C'
-			&& game->map[i][j] != 'E')
+			if (game->map[i][j] != '1' && game->map[i][j] != 'P'
+				&& game->map[i][j] != 'C'
+				&& game->map[i][j] != 'E')
 				return (1);
 			j++;
 		}

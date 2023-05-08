@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:42:39 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/08 13:20:51 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:13:25 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_image
 
 typedef struct s_game
 {
-	bool	map_alloc;
 	char	**map;
 	char	**tmp;
 	int		rows;
@@ -58,8 +57,6 @@ typedef struct s_game
 	int		e_y;
 	int		collectibles;
 	int		collected;
-	bool	exit_f;
-	bool	player_f;
 	int		moves;
 	void	*mlx_ptr;
 	void	*win_ptr;

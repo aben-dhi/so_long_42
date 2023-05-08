@@ -6,7 +6,7 @@
 /*   By: aben-dhi <aben-dhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:16:43 by aben-dhi          #+#    #+#             */
-/*   Updated: 2023/05/08 13:20:17 by aben-dhi         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:02:12 by aben-dhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ void	get_matrix(int fd, t_game *game)
 	long_s = malloc(1 * sizeof(char));
 	if (!long_s)
 		exit (1);
-	long_s = 0;
 	while (short_s != NULL)
 	{
 		long_s = ft_strjoin(long_s, short_s);
 		free (short_s);
 		short_s = get_next_line(fd);
 	}
-	free (short_s);
+	free(short_s);
 	game->map = ft_split(long_s, '\n');
 	game->tmp = ft_split(long_s, '\n');
 	free (long_s);
@@ -52,10 +51,6 @@ int	main(int ac, char **av)
 	}
 	full_check(&game, av[1], fd);
 	close (fd);
-	player_pos(&game);
-	exit_pos(&game);
 	init_game(&game);
-	printf("yo\n");
-	put_img(&game);
 	return (0);
 }
